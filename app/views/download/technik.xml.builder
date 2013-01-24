@@ -5,10 +5,10 @@ xml.tag!('techniken-list') do               # xml.foo creates foo element
       technik.klasses.each do |klasse|
         xml.class img: klasse.img, name: klasse.name, posx: klasse.pos_x, posy: klasse.pos_y, type: klasse.klasse_type do
           klasse.attributs.each do |attr|
-            xml.attr name: attr.name, type: attr.data_type
+            xml.attribute name: attr.name, type: attr.data_type
           end
           klasse.methodes.each do |meth|
-            xml.meth name: meth.name do 
+            xml.method name: meth.name do 
               meth.activities.each do |act|
                 xml.activity arg: act.arg, type: act.activity_type
               end
